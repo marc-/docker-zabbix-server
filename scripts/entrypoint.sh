@@ -1,11 +1,12 @@
 #!/bin/sh
 
-#source /etc/profile.d/java.sh
-
 _file_marker=".mysql-configured"
 
 if [ "x$DB_ENV_MYSQL_PASS" != "x"  ]; then
   MYSQL_PASS=$DB_ENV_MYSQL_PASS
+fi
+if [ "x$DB_ENV_MYSQL_PASSWORD" != "x"  ]; then
+  MYSQL_PASS=$DB_ENV_MYSQL_PASSWORD
 fi
 if [ "x$DB_ENV_MYSQL_USER" != "x"  ]; then
   MYSQL_USER=$DB_ENV_MYSQL_USER
@@ -49,5 +50,4 @@ rm -f /var/run/httpd.pid
 
 service zabbix-server start
 service zabbix-agentd start
-#service zabbix-java-gateway start
 /usr/sbin/httpd -DFOREGROUND
