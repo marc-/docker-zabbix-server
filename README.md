@@ -1,5 +1,6 @@
 # Zabbix server on Alpine Linux
 Zabbix server, web inteface and zabbix-agent on Alpine Linux. Uses external Mysql database. Compatible with official `mysql`, `tutum/mysql` docker images.
+Image size ~172.8Mb.
 
 Usage:
 First run mysql instance:
@@ -32,6 +33,6 @@ DB_PORT_3306_TCP_PORT
 Web Interface default login:
 Admin:zabbix
 
-
+[Dockerfile](https://github.com/marc-/docker-zabbix-server/blob/master/Dockerfile)
 
 Inspired by [berngp/docker-zabbix](https://github.com/berngp/docker-zabbix) .
