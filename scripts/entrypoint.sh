@@ -48,6 +48,6 @@ sed -e "s/^\(DBHost=\).*/\1$MYSQL_HOST/g" \
 
 rm -f /var/run/httpd.pid
 
-service zabbix-server start
-service zabbix-agentd start
+/usr/sbin/zabbix_server -c /etc/zabbix/zabbix_server.conf
+/usr/sbin/zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
 /usr/sbin/httpd -DFOREGROUND
