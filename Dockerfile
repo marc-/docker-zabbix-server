@@ -1,8 +1,8 @@
-FROM alpine:3.1
+FROM alpine:3.2
 MAINTAINER Maksim Chizhov <maksim.chizhov@gmail.com>
 LABEL version="1.0"
 LABEL description="Zabbix server based on alpine linux with external mysql database."
-LABEL modified="2015-05-22"
+LABEL modified="2015-08-01"
 
 # Installing packages, then clean up cache
 RUN apk add --update \
