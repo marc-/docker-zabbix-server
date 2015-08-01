@@ -8,11 +8,15 @@ First run mysql instance:
 ```bash
 docker run -d -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_USER=zabbix -e MYSQL_PASSWORD=secret -e MYSQL_DATABASE=zabbix --name zabbix-db mysql
 ```
+See more details about mysql image at https://registry.hub.docker.com/_/mysql/ .
+
 Then run zabbix server container:
 
 ```bash
-docker run --link zabbix-db:db --rm -ti --name zabbix-server -p 80:80 eit8ei8n/zabbix-server
+docker run --link zabbix-db:db -d --name zabbix-server -p 80:80 eit8ei8n/zabbix-server
 ```
+Add `--restart=always` option to both commands if you want zabbix server to start automatically on system reboot.
+
 Environment variables:
 
 ```
@@ -30,7 +34,7 @@ DB_ENV_MYSQL_USER
 DB_PORT_3306_TCP_ADDR
 DB_PORT_3306_TCP_PORT
 ```
-Web Interface default login:
+Web Interface (http://&lt;host&gt;/zabbix) default login:
 Admin:zabbix
 
 [Dockerfile](https://github.com/marc-/docker-zabbix-server/blob/master/Dockerfile)
